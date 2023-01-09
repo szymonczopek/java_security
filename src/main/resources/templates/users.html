@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <head th:include="layout :: head">
+    </head>
+<body>
+<div th:include="layout :: navigationPanel"></div>
+<h1>Lista uzytkownikow</h1>
+<table>
+    <thead>
+    <tr>
+        <th> Imie </th>
+        <th> Nazwisko </th>
+        <th> Login </th>
+        <th> Hasło </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${lista}">
+        <td><span th:text="${user.name}"> Imie </span></td>
+        <td><span th:text="${user.surname}"> Nazwisko </span></td>
+        <td><span th:text="${user.login}"> Login </span></td>
+        <td><span th:text="${user.password}"> Hasło </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
